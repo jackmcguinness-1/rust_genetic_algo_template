@@ -11,12 +11,17 @@ fn main() {
         data_generator,
         mutation_function,
         crossover_function,
-        fitness_function
+        fitness_function,
+        crossover_selection_threshold_percent: 50,
+        crossover_resulting_percent: 50,
+        mutation_selection_threshold_percent: 100,
+        mutation_resulting_percent: 30,
+        elitism_percent: 20
     };
 
     let rng_generator = RngGenerator64::new_time_seeded();
 
-    let data = algo.run_n_times(rng_generator, 2, 100);
+    let data = algo.run_n_times(rng_generator, 10, 10);
 
     println!("{:?}", data);
 }

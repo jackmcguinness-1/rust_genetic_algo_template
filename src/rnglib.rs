@@ -40,7 +40,7 @@ impl RngGenerator64{
             }
         }
 
-        let mut mushed = unsafe{
+        let mushed = unsafe{
             let float_ptr = &trand.elapsed().as_secs_f64() as *const f64;
             let int_ptr = float_ptr as *const u64;
             *int_ptr
